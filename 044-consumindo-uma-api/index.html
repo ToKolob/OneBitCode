@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
+  <script type="module" src="index.js" defer></script>
+  <title>Exercício Final - Consumindo uma API</title>
+  <style>
+    
+  </style>
+</head>
+<body>
+  <header><h1>Z- Consumindo uma API</h1></header>
+  <section class="enviar">
+    <p>insira os dados da transação</p>
+    <form action="http://localhost:3000/transacao" method="post">
+      <label for="data">Data: </label>
+      <input type="date" name="data" id="data">
+      <label for="valor">Valor: </label>
+      <input type="number" name="valor" id="valor" step="0.01">
+      <label for="descricao">Descrição: </label>
+      <input type="text" name="descricao" id="descricao" maxlength="50">
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+  <section >
+    <table border="1">
+      <thead>
+        <th>data</th>
+        <th>valor</th>
+        <th>descrição</th>
+      </thead>
+      <tbody id="receber">
+        
+      </tbody>
+      <tbody style="background-color: yellow; color: black; font-weight: bolder;">
+        <tr>
+          <td>Saldo total</td>
+          <td id="saldo" style="text-align: right;">0.00</td>
+          
+        </tr>
+        
+      </tbody>
+      
+    </table>
+    
+
+  </section>
+  
+</body>
+</html>

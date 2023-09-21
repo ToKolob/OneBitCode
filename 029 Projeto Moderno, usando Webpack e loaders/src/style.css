@@ -1,0 +1,135 @@
+body {
+    background-color: black;
+    margin: auto;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+strong {
+    text-shadow: 1px 1px 10px rgb(255, 255, 255);
+}
+h1, h2, h3, h4{
+    text-shadow: 1px 1px 20px red;
+    -webkit-text-stroke: 1px red;
+}
+h2, h3, h4{
+    margin: 5px;
+}
+table {
+    padding: 10px;
+    margin: 10px;
+    border: 10px;
+}
+section {
+    background-color: rgb(26, 26, 26);
+    padding: 5px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 30px red;
+    margin-bottom: 20px;
+}
+div {
+    background-color: rgb(26, 26, 26);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px red;
+}
+footer {
+    text-align: center;
+    font-style: italic;
+}
+p {
+    margin-left: 10px;
+}
+ul {
+    
+}
+li{
+
+    padding: 10px;
+
+
+    
+    
+    
+    
+
+}
+h1{
+    text-align: center;
+}
+h2 {
+    text-align: center;
+}
+h3 {
+    text-align: center;
+}
+a {
+    font: bold 16px Arial;
+    text-decoration: none;
+    color: yellow;
+    display: contents;
+}
+img {
+    margin-left: 30px;
+    padding: 10px;
+    border-radius: 8px;
+    
+}
+span#verdeButton {
+    background-color: rgb(41, 143, 41);
+    border-radius: 30px;
+    border:0cm;
+
+}
+pre {
+    background-color: black;
+    border-radius: 10px;
+    width: 95%;
+    margin: auto;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+code {
+    white-space: pre-wrap;
+    letter-spacing: 2px;
+}
+div.retornar {
+    width: 100px;
+    text-align: center;
+    padding: 10px;
+    margin-left: auto;
+    color: black;
+    background-color: red;
+    box-shadow: none;
+}
+input {
+    margin: 5px 0 5px 0;
+}
+.bigger {
+    box-shadow: 0px 0px 30px red;
+    transition: 0.5s;
+    font-size: 20pt;
+    transform: scale(1.1);
+}
+.itens {
+    display: flex;
+    padding: 10px;
+    width: 20%;
+    height: 80px;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    border: 2px black solid;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px red;
+    margin: 10px;
+    transition: 0.5s;
+}
+.menu{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    align-content: center;
+
+}

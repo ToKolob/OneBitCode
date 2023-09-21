@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Devs</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+
+    label  {
+      display: inline-block;
+      width: 150px;
+      text-align: left;
+    }
+    span {display: block;}
+    label#forRadio {
+      text-align: left;
+      
+    }
+  </style>
+  
+
+</head>
+<body>
+  <header>
+    <h1>Cadastro de Devs</h1>
+  </header>
+  <section>
+    <div>
+      <P>Por favor insira seus dados para realizar o cadastro.</P>
+      <form >
+        <label for="name">Nome:</label>
+        <input type="text" name="name" id="name">
+        <button id="insertNewHability">Adicionar tecnologia</button>
+        <span id="radiosSpan"></span>
+        <input type="submit" id="submitData" value="Cadastrar" name="submitData">
+      </form>
+
+    </div>
+
+  </section>
+  <footer>
+    &copy;OneBitcode
+    <a href="../Onebitcode integrado.html">
+      <div class="retornar">
+        Retornar
+      </div>
+    </a>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

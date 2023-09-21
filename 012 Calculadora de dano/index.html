@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de dano</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    label {
+      display: inline-block;
+      width: 250px;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Calculadora de dano</h1>
+  </header>
+  <section>
+    <div>
+      <h2>Atacante</h2>
+      <label for="nameOffencive">Nome de quem está atacando: </label>
+      <input type="text" id="nameOffencive" autofocus>
+      <br>
+      <label for="damage">Pontos de dano</label>
+      <input type="number" name="damage" id="damage">
+    </div>
+    <div>
+      <h2>Defensor</h2>
+      <label for="nameDefencive">Nome de quem está Defendendo: </label>
+      <input type="text" id="nameDefencive" autofocus>
+      <br>
+      <label for="healthPoints">Pontos de vida</label>
+      <input type="number" name="healthPoints" id="healthPoints">
+      <br>
+      <label for="defencivePoints">Pontos de defesa</label>
+      <input type="number" name="defencivePoints" id="defencivePoints">
+      <br>
+      <label for="hasShild">- Tem escudo</label>
+      <select name="hasShild" id="hasShild" value=>
+        <option value="no">Não</option>
+        <option value="yes">Sim</option>        
+      </select>
+      <input type="button" value="Calcular Dano" onclick="calculate()">           
+    </div>
+    <div id="outp"></div>       
+  </section>
+  <footer>
+    &copy;OneBitcode
+    <a href="../Onebitcode integrado.html">
+      <div class="retornar">
+        Retornar
+      </div>
+    </a>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

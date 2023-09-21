@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversor de medidas</title>
+  <link rel="stylesheet" href="../style.css">
+
+</head>
+<body>
+  <header>
+    <h1>Conversor de medidas</h1>
+  </header>
+  <section>
+    <div>
+      <h2>Valor conhecido</h2>
+      <label for="unitOfMeasurement">Unidade de entrada</label>
+      <select name="unitOfMeasurement" id="unitOfMeasurement">
+        <option value="">Escolha uma unidade:</option>
+        <option value="meter">Metro (m)</option>
+        <option value="kilometer">Quilômetro (km) - 1 km = 1000 metros</option>
+        <option value="centimeter">Centímetro (cm) - 1 cm = 0.01 metro</option>
+        <option value="millimeter">Milímetro (mm) - 1 mm = 0.001 metro</option>
+        <option value="mile">Milha (mile) - 1 mile ≈ 1609 metros</option>
+        <option value="yard">Jarda (yard) - 1 yard ≈ 0.914 metros</option>
+        <option value="foot">Pé (foot) - 1 foot ≈ 0.305 metros</option>
+        <option value="inch">Polegada (inch) - 1 inch ≈ 0.0254 metros</option>
+      </select>
+      <label for="unitValue">Valor:   </label>
+      <input type="number" name="unitValue" id="unitValue" autofocus> 
+      
+    </div>
+    <div>
+      
+      <label for="unitOfOutput">Unidade de saída</label>
+      <select name="unitOfOutput" id="unitOfOutput">
+        <option value="">Escolha uma unidade:</option>
+        <option value="meter">Metro (m)</option>
+        <option value="kilometer">Quilômetro (km) - 1 km = 1000 metros</option>
+        <option value="centimeter">Centímetro (cm) - 1 cm = 0.01 metro</option>
+        <option value="millimeter">Milímetro (mm) - 1 mm = 0.001 metro</option>
+        <option value="mile">Milha (mile) - 1 mile ≈ 1609 metros</option>
+        <option value="yard">Jarda (yard) - 1 yard ≈ 0.914 metros</option>
+        <option value="foot">Pé (foot) - 1 foot ≈ 0.305 metros</option>
+        <option value="inch">Polegada (inch) - 1 inch ≈ 0.0254 metros</option>
+      </select>
+      <input type="button" value="Converter" onclick="convert()">
+      <label for="answer">Valor: </label>
+      <span id="answer"></span> 
+      
+    </div>
+    
+   
+  </section>
+  <footer>
+    &copy;OneBitcode
+    <a href="../Onebitcode integrado.html">
+      <div class="retornar">
+        Retornar
+      </div>
+    </a>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>calculadora simples</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    li input[type=radio] {
+      padding: 10px;
+      margin: 5px;
+    }
+  </style>
+  <script type="module" src="script.js" defer ></script>
+</head>
+<body>
+  <main data-theme="dark">
+    <header>
+      <h1>calculadora simples</h1>
+      <button id="themeSwitch">Switch Theme Dark/Light</button>
+    </header>
+    
+    <input type="text" name="inputs" id="inputs">
+    <div id="keys">
+      <button id="clear">C</button>
+      <button class="numKey" data-value=" ( ">(</button>
+      <button class="numKey" data-value=" ) ">)</button>
+      <button class="numKey" data-value=" / ">/</button>
+      <button class="numKey" data-value="7">7</button>
+      <button class="numKey" data-value="8">8</button>
+      <button class="numKey" data-value="9">9</button>
+      <button class="numKey" data-value=" * ">*</button>
+      <button class="numKey" data-value="4">4</button>
+      <button class="numKey" data-value="5">5</button>
+      <button class="numKey" data-value="6">6</button>
+      <button class="numKey" data-value=" + ">+</button>
+      <button class="numKey" data-value="1">1</button>
+      <button class="numKey" data-value="2">2</button>
+      <button class="numKey" data-value="3">3</button>
+      <button class="numKey" data-value=" - ">-</button>
+      <button class="numKey" data-value=" 0 ">0</button>
+      <button class="numKey" data-value=" . ">.</button>
+      <button class="numKey" data-value=" % ">mod</button>
+      <button id="equal">=</button>
+      
+    </div>
+
+    <section class="flex align-center justify-between">      
+      <button id="copyToClipboard">Copy</button>
+      <input type="text" id="result" disabled>
+    </section>
+
+    
+    <footer>
+      &copy;OneBitcode
+      <a href="../Onebitcode integrado.html">
+        <div class="retornar">
+          Retornar
+        </div>
+      </a>
+    </footer>
+  </main>
+  
+</body>
+</html>

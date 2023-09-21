@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escalação de Times</title>
+  <link rel="stylesheet" href="../style.css">
+  
+
+</head>
+<body>
+  <header>
+    <h1>Escalação de Times</h1>
+  </header>
+  <section>
+    <div>
+      <label for="playersName">Nome: </label>
+      <input type="text" autofocus id="playersName">      
+      <label for="playerPosition">Posição do jogador: </label>
+      <input type="search" name="playerPosition" id="playerPosition" list="positions">
+      <datalist id="positions">
+        <option value="Goleiro"></option>
+        <option value="Zagueiro"></option>
+        <option value="Lateral"></option>
+        <option value=""></option>
+        <option value="Meio-campista"></option>
+        <option value="Atacante"></option>
+        <option value="Volante"></option>
+        <option value="Ala"></option>
+      </datalist>
+      <label for="playerShirt">Camisa: </label>
+      <input type="number" name="playerShirt" id="playerShirt" max="100" min="0">
+      <button onclick="sendData()">Escalar Jogador</button>
+      <hr>
+      <label for="removePlayer">Remover camisa: </label>
+      <input type="number" name="removePlayer" id="removePlayer" max="100" min="0">
+      <button onclick="removePlayer()">Remover Jogador</button>
+
+    </div>
+    <div id="scaledPlayers">
+      <ul></ul>
+    </div>
+    
+    
+  
+  </section>
+  <footer>
+    &copy;OneBitcode
+    <a href="../Onebitcode integrado.html">
+      <div class="retornar">
+        Retornar
+      </div>
+    </a>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

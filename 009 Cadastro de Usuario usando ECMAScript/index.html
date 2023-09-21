@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Usuario usando ECMAScript</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <h1>Cadastro de Usuario usando ECMAScript</h1>
+  </header>
+  <section>
+    <div>
+      <form action="">
+        <label for="name">Primeiro nome: </label>
+        <input type="text" id="name" autofocus>
+        <label for="surname">Sobrenome: </label>
+        <input type="text" name="surname" id="surname">
+        <hr>
+        <label for="study_matter">Campo de estudo: </label>
+        <input type="search" name="study_matter" id="study_matter" list="studies">
+        <datalist id="studies">
+          <option value="Python"></option>
+          <option value="Java"></option>
+          <option value="ECMAScript"></option>
+        </datalist>
+        <label for="birthday">Ano de nascimento</label>
+        <input type="number" name="" id="birthday" min="1900" max="2050" step="1" value="2000"><br>
+        <input type="button" value="Enviar" id="send" onclick="send_data()">
+      </form>
+    </div>
+    <div id="res">
+      
+    </div>
+  </section>
+  <footer>
+    &copy;OneBitcode
+    <a href="../Onebitcode integrado.html">
+      <div class="retornar">
+        Retornar
+      </div>
+    </a>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

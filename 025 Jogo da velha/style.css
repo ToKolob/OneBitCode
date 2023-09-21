@@ -1,0 +1,63 @@
+:root {
+  --bg-color: #333
+} 
+.whte{
+  background-color: aliceblue;
+}
+
+body{
+  align-content: center;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+}
+.menu{
+  margin: auto;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
+  box-shadow: none;
+  
+  border-radius: 0;
+}
+.start{
+  align-self: center;
+    
+  border-radius: 100%;
+  
+}
+.container{
+  margin: auto;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  width: min-content ;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: none;
+  transition: 1s;
+  
+  border-radius: 0;
+}
+#box{
+  border: 0px solid rgb(255, 255, 255);
+  width: 30%;
+  height: 30%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  box-shadow: none;
+  border-radius: 0;
+  background-color: var(--bg-color);
+  transition: 1s;
+  
+
+}

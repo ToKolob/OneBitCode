@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projeto Moderno, usando Webpack e loaders</title>
+  <link rel="stylesheet" href="../../style.css">
+  <script src="index.js" defer></script>
+</head>
+<body>  
+  <header>
+  <h1>Projeto Moderno, usando Webpack e loaders simples</h1>
+</header>
+<section style="text-align: center;">
+  <button>Initialize</button>
+</section>
+<section>
+  <p>Passo a passo na criação de um projeto front-end moderno com Webpack, Babel e integração de CSS. Vamos começar!</p>
+  <h2>Passo 1: Configurando o ambiente</h2>
+  <p>Certifique-se de que você tenha o Node.js e o npm instalados em seu sistema. Você pode verificar isso executando os seguintes comandos no seu terminal:</p>
+  <pre><code><p>node -v <br>npm -v
+  </p></code></pre>
+  <p>Se ambos os comandos retornarem versões, você está pronto para continuar.</p>
+
+  <h2>Passo 2: Inicializando o projeto npm</h2>
+  <p>Primeiro, crie uma pasta para o seu projeto e navegue até ela usando o terminal. Em seguida, execute o seguinte comando para inicializar um projeto npm:</p>
+  <pre><code>npm init -y
+  </code></pre>
+  <p>Isso criará um arquivo package.json com as configurações padrão.</p>
+
+  <h2>Passo 3: Instalando Webpack e Babel</h2>
+  <p>Agora, vamos instalar o Webpack e o Babel, juntamente com alguns outros pacotes necessários. Execute os seguintes comandos:</p>
+  <pre><code>npm install webpack webpack-cli babel-loader @babel/core @babel/preset-env --save-dev
+  </code></pre>
+  <p>Isso instalará respectivamente o Webpack, o CLI do Webpack, o Babel, e o preset do Babel para o ambiente, que é algo como uma configuração para o Babel fazer a conversão para o Javascript antigo.</p>
+
+  <h2>Passo 4: Configurando o Webpack</h2>
+  <p>Crie um arquivo chamado webpack.config.js na raiz do seu projeto e adicione o seguinte conteúdo:</p>
+  <pre><code>
+const path = require('path');
+
+module.exports = {
+  entry: './src/index.js', // Seu ponto de entrada JavaScript
+  output: {
+    filename: '[name].min.js', // Nome do arquivo de saída
+    path: path.resolve(__dirname, 'dist'), // Pasta de saída
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/, // Transpile todos os arquivos .js
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader', // Use o babel-loader para transpilar
+        },
+      },
+      {
+        test: /\.css$/, // Processar arquivos CSS
+        use: ['style-loader', 'css-loader'], // Use style-loader e css-loader
+      },
+    ],
+  },
+};
+
+  </code></pre>
+  <p>Certifique-se de que o seu projeto tenha a seguinte estrutura de diretórios:</p>
+  <pre><code>
+    - /your-project-folder
+    - /src
+      - index.js
+    - /dist
+    - package.json
+    - webpack.config.js
+  </code></pre>
+
+  <h2>Passo 5: Configurando o Babel</h2>
+  <p>Crie um arquivo chamado .babelrc na raiz do seu projeto e adicione o seguinte conteúdo:</p>
+  <pre><code>
+  {
+    "presets": ["@babel/preset-env"]
+  }
+  </code></pre>
+  <p>Isso define a configuração do Babel para usar o preset @babel/preset-env, que permite que você use recursos modernos do JavaScript.</p>
+
+  <h2>Passo 6: Criando arquivos de exemplo</h2>
+  <p>Vamos criar alguns arquivos de exemplo para testar o funcionamento do projeto. Crie um arquivo index.js dentro da pasta src e adicione algum código JavaScript de teste. </p>
+  <p>Crie também um arquivo styles.css na pasta src para testar a integração do CSS.</p>
+
+  <h2>Passo 7: Criando um script de build</h2>
+  <p>Edite o seu arquivo package.json e adicione um script chamado "build" ao objeto "scripts":</p>
+  <pre><code>
+    {
+      "scripts": {
+        "build": "webpack"
+      }
+    }
+    
+  </code></pre>
+  <p>Se não encontrar, crie o objeto script e adicione o script com o nome build (poderia ser qualquer nome, mas build é o padrão utilizado)</p>
+
+  <h2>Passo 8: Executando o build</h2>
+  <p>Agora, você está pronto para executar o build. No terminal, execute o seguinte comando:</p>
+  <pre><code>npm run build
+  </code></pre>
+  <p>Isso acionará o Webpack para processar seu código JavaScript e CSS e gerar os arquivos de saída na pasta 'dist'.</p>
+
+  <h2>Passo 9: Criando uma página HTML de teste</h2>
+  <p>Crie um arquivo index.html na pasta raiz do seu projeto e adicione o seguinte conteúdo:</p>
+  <pre><code>
+<script src="dist/main.min.js"></script>
+  </code></pre>
+
+
+
+
+
+
+
+  
+  
+
+</section>
+<footer>
+  &copy;OneBitcode
+  <a href="../../Onebitcode integrado.html">
+    <div class="retornar">
+      Retornar
+    </div>
+  </a>
+</footer>
+  
+</body>
+</html>

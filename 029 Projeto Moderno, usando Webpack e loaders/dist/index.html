@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projeto Moderno, usando Webpack e loaders</title>
+  <link rel="stylesheet" href="./main.min.js">
+  
+  <script src="../dist/main.min.js" defer></script>
+</head>
+<body>  
+  <header>
+  <h1>Projeto Moderno, usando Webpack e loaders simples</h1>
+</header>
+<section style="text-align: center;">
+  <button>Initialize</button>
+</section>
+<section>
+  <h2>Estruturando um Projeto Moderno</h2>
+  <p>Neste exercício, estamos preparando toda a estrutura necessária para trabalhar em um projeto front-end moderno, unificando todo o conhecimento aprendido até o momento.
+  </p>
+
+  <p>O objetivo é criar um projeto npm e instalar nele o webpack e o babel, integrando o babel ao webpack utilizando o babel-loader (que pode ser instalado através do npm). Também estamos integrando o css ao webpack, utilizando o style-loader e o css-loader (ambos podem ser instalados através do npm).</p>
+
+  <p>Para executar o webpack, estamos criando um script chamado “build”. Além disso, estamos nomeando a saída do webpack de acordo com o nome do ponto de entrada no formato “[name].min.js” e minimizando seu conteúdo.</p>
+
+  <p>Por fim, estamos testando nosso projeto criando uma página HTML simples que é capaz de carregar a estilização e o JavaScript de saída do webpack corretamente.</p>
+</section>
+<section>
+  
+
+  <h2>Execução</h2>
+  <p>Passo a passo na criação de um projeto front-end moderno com Webpack, Babel e integração de CSS. Vamos começar!</p>
+  <h3>Passo 1: Configurando o ambiente</h3>
+  <p>Certifique-se de que você tenha o Node.js e o npm instalados em seu sistema. Você pode verificar isso executando os seguintes comandos no seu terminal:</p>
+  <pre><code><p>node -v <br>npm -v
+  </p></code></pre>
+  <p>Se ambos os comandos retornarem versões, você está pronto para continuar.</p>
+
+  <h3>Passo 2: Inicializando o projeto npm</h3>
+  <p>Primeiro, crie uma pasta para o seu projeto e navegue até ela usando o terminal. Em seguida, execute o seguinte comando para inicializar um projeto npm:</p>
+  <pre><code>npm init -y
+  </code></pre>
+  <p>Isso criará um arquivo package.json com as configurações padrão.</p>
+
+  <h3>Passo 3: Instalando Webpack e Babel</h3>
+  <p>Agora, vamos instalar o Webpack e o Babel, juntamente com alguns outros pacotes necessários. Execute os seguintes comandos:</p>
+  <pre><code>npm install webpack webpack-cli babel-loader style-loader css-loader @babel/core @babel/preset-env --save-dev
+  </code></pre>
+  <p>Isso instalará respectivamente o Webpack, o CLI do Webpack, os loader do Babel e css, e o preset do Babel para o ambiente, que é algo como uma configuração para o Babel fazer a conversão para o Javascript antigo.</p>
+
+  <h3>Passo 4: Configurando o Webpack</h3>
+  <p>Crie um arquivo chamado webpack.config.js na raiz do seu projeto e adicione o seguinte conteúdo:</p>
+  <pre><code>
+const path = require('path');
+
+module.exports = {
+  entry: './src/index.js', // Seu ponto de entrada JavaScript
+  output: {
+    filename: '[name].min.js', // Nome do arquivo de saída
+    path: path.resolve(__dirname, 'dist'), // Pasta de saída
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/, // Transpile todos os arquivos .js
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader', // Use o babel-loader para transpilar
+        },
+      },
+      {
+        test: /\.css$/, // Processar arquivos CSS
+        use: ['style-loader', 'css-loader'], // Use style-loader e css-loader
+      },
+    ],
+  },
+};
+
+  </code></pre>
+  <p>Caso você queira mudar o o modo de produção para desenvolvimento adicione o objeto <strong>mode: 'development'</strong> ao module.exports</p>
+  <p>Certifique-se de que o seu projeto tenha a seguinte estrutura de diretórios:</p>
+  <pre><code>
+    - /your-project-folder
+    - /src
+      - index.js
+    - /dist
+    - package.json
+    - webpack.config.js
+  </code></pre>
+
+  <h3>Passo 5: Configurando o Babel</h3>
+  <p>Crie um arquivo chamado .babelrc na raiz do seu projeto e adicione o seguinte conteúdo:</p>
+  <pre><code>
+  {
+    "presets": ["@babel/preset-env"]
+  }
+  </code></pre>
+  <p>Isso define a configuração do Babel para usar o preset @babel/preset-env, que permite que você use recursos modernos do JavaScript.</p>
+
+  <h3>Passo 6: Criando arquivos de exemplo</h3>
+  <p>Vamos criar alguns arquivos de exemplo para testar o funcionamento do projeto. Crie um arquivo index.js dentro da pasta src e adicione algum código JavaScript de teste. </p>
+  <p>Crie também um arquivo styles.css na pasta src para testar a integração do CSS.</p>
+  <p>Para que o css fique integrado no script importe o .css para dentro do script:</p>
+  <pre><code>
+    import './styles.css'; // Importe seu arquivo CSS
+  </code></pre>
+
+  <h3>Passo 7: Criando um script de build</h3>
+  <p>Edite o seu arquivo package.json e adicione um script chamado "build" ao objeto "scripts":</p>
+  <pre><code>
+    {
+      "scripts": {
+        "build": "webpack"
+      }
+    }
+    
+  </code></pre>
+  <p>Se não encontrar, crie o objeto script e adicione o script com o nome build (poderia ser qualquer nome, mas build é o padrão utilizado)</p>
+
+  <h3>Passo 8: Executando o build</h3>
+  <p>Agora, você está pronto para executar o build. No terminal, execute o seguinte comando:</p>
+  <pre><code>npm run build
+  </code></pre>
+  <p>Isso acionará o Webpack para processar seu código JavaScript e CSS e gerar os arquivos de saída na pasta 'dist'.</p>
+
+  <h3>Passo 9: Criando uma página HTML de teste</h3>
+  <p>Crie um arquivo index.html na pasta raiz do seu projeto e adicione o seguinte conteúdo:</p>
+  <pre><code>
+&lt;script src="dist/main.min.js"></script>
+  </code></pre>
+</section>
+<section>
+  <h1>Extras</h1>
+  <h2>Webpack dev server</h2>
+  <p>O Webpack Dev Server é uma ferramenta que permite que você desenvolva seu aplicativo da web com facilidade, oferecendo um servidor de desenvolvimento que atualiza automaticamente as alterações no navegador à medida que você faz alterações no código-fonte. Aqui está um guia passo a passo sobre como usar o Webpack Dev Server:</p>
+  <h3>Passo 1: Instale o Webpack Dev Server</h3>
+  <pre><code>
+    npm install webpack-dev-server --save-dev
+  </code></pre>
+  <p>ou</p>
+  <pre><code>
+    npm i -d webpack-dev-server
+  </code></pre>
+
+  <h3>Passo 2: Configure o Webpack</h3>
+  <p>Certifique-se de que você já tenha configurado o Webpack para o seu projeto. Se você ainda não o fez, crie um arquivo de configuração webpack.config.js. Nesse caso precisamos adicionar uma configuração para o caminho:</p>
+  <pre><code>
+    devServer: {
+      static:{
+        directory: path.resolve(__dirname,'dist')
+      }
+    }
+  </code></pre>
+
+
+  <h3>Passo 3: Adicione um script de desenvolvimento ao seu package.json</h3>
+  <p>Abra seu arquivo package.json e adicione um script para iniciar o Webpack Dev Server. Por exemplo:</p>
+  <pre><code>
+    "scripts": {
+      "start": "webpack-dev-server --open"
+    }    
+  </code></pre>
+  <p>O --open no comando acima abrirá automaticamente o navegador após iniciar o servidor.</p>
+
+  <h3>Passo 4: Inicie o Webpack Dev Server</h3>
+  <p>Agora você pode iniciar o Webpack Dev Server executando o seguinte comando no terminal:</p>
+  <pre><code>npm start</code></pre>
+  <p>Isso iniciará o servidor de desenvolvimento e abrirá automaticamente seu aplicativo no navegador padrão. Você também verá informações no terminal sobre o status do servidor, como a porta em que está sendo executado.</p>
+
+  <h3>Passo 5: Desenvolva seu aplicativo</h3>
+  <p>Agora que o servidor de desenvolvimento está em execução, você pode começar a desenvolver seu aplicativo. Conforme você faz alterações no código-fonte (JavaScript, HTML, CSS, etc.), o Webpack Dev Server irá automaticamente recarregar a página no navegador para refletir as alterações.</p>
+
+  <h3>Passo 6: Acesse o aplicativo</h3>
+  <p>Abra um navegador da web e acesse o aplicativo em http://localhost:8080 (a menos que você tenha especificado uma porta diferente). Você verá seu aplicativo em execução no servidor de desenvolvimento.</p>
+
+  <h3>Passo 7: Pare o servidor de desenvolvimento</h3>
+  <p>Quando você terminar de desenvolver, basta pressionar Ctrl + C no terminal para parar o servidor de desenvolvimento. <br><br>
+
+    Isso é tudo! Você agora está usando o Webpack Dev Server para desenvolver seu aplicativo da web de forma mais eficiente. Certifique-se de personalizar a configuração do Webpack conforme necessário para atender às necessidades específicas do seu projeto.</p>
+
+
+
+
+
+</section>
+<footer>
+  &copy;OneBitcode
+  <a href="../../Onebitcode integrado.html">
+    <div class="retornar">
+      Retornar
+    </div>
+  </a>
+</footer>
+  
+</body>
+</html>
